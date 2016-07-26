@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.hope.leadmap.mapdemo.sevenparameter.SetSevenParameterActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableRow android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="80dp"
+                        android:text="X平移(米):"
+                        android:gravity="center"/>
+                    <EditText
+                        android:id="@+id/pan_x_edit"
+                        android:textCursorDrawable="@null"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        />
+                </TableRow>
+                <TableRow android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="80dp"
+                        android:text="Y平移(米):"
+                        android:gravity="center"/>
+                    <EditText
+                        android:id="@+id/pan_y_edit"
+                        android:textCursorDrawable="@null"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        />
+                </TableRow>
+
+                <TableRow android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="80dp"
+                        android:text="Z平移(米):"
+                        android:gravity="center"/>
+                    <EditText
+                        android:id="@+id/pan_z_edit"
+                        android:textCursorDrawable="@null"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        />
+                </TableRow>
+
+                <TableRow android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="80dp"
+                        android:text="X轴旋转(秒):"
+                        android:gravity="center"/>
+                    <EditText
+                        android:id="@+id/roat_x_edit"
+                        android:textCursorDrawable="@null"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        />
+                </TableRow>
+
+                <TableRow android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="80dp"
+                        android:text="Y轴旋转(秒):"
+                        android:gravity="center"/>
+                    <EditText
+                        android:id="@+id/roat_y_edit"
+                        android:textCursorDrawable="@null"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        />
+                </TableRow>
+
+                <TableRow android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="80dp"
+                        android:text="Z轴旋转(秒):"
+                        android:gravity="center"/>
+                    <EditText
+                        android:id="@+id/roat_z_edit"
+                        android:textCursorDrawable="@null"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        />
+                </TableRow>
+
+                <TableRow android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="80dp"
+                        android:text="尺度:"
+                        android:gravity="center"/>
+                    <EditText
+                        android:id="@+id/k_edit"
+                        android:textCursorDrawable="@null"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        />
+                </TableRow>
+
+                <TableRow android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                    >
+                    <Button
+                        android:id="@+id/ok_bt"
+                        android:layout_marginTop="16dp"
+                        android:text="确定"
+                        android:layout_column="1"/>
+                </TableRow>
+
+            </TableLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+</RelativeLayout>

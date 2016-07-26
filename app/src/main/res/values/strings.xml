@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">坐标转换</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="map_url_xs">http://183.129.204.238:6080/arcgis/rest/services/Lm_XsWater_GWT20150423/MapServer</string>
+    <string name="map_url_wj">http://183.129.204.238:6082/arcgis/rest/services/Lm_WjWater_GWT/MapServer</string>
+
+    <string name="seven_parameter_activity">七参数转换</string>
+    <string name="four_parameter_activity">四参数转换</string>
+    <string name="gaosi_activity">高斯正算</string>
+
+    <string name="fourparameter_settings">平面转换四参数</string>
+    <string name="seven_parameter_settings">椭球转换七参数</string>
+    <string name="project_settings">投影参数</string>
+</resources>

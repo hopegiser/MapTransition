@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="type_test">
+        <item>其他</item>
+    </array>
+
+    <array name="name_test">
+        <item>其他</item>
+    </array>
+
+    <string-array name="types">
+        <item>北京54</item>
+        <item>西安80</item>
+    </string-array>
+
+    <array name="subsystem_name">
+        <item>地图</item>
+        <item>巡查</item>
+        <item>抢修</item>
+    </array>
+
+    <array name="query_group">
+        <item>基本属性</item>
+        <item>其他属性</item>
+    </array>
+
+    <array name="query_child_base_key">
+        <item>GISNo</item>
+        <item>地面高程</item>
+        <item>埋深</item>
+        <item>口径</item>
+        <item>材质</item>
+        <item>点类型</item>
+        <item>所在道路</item>
+        <item>监测点名称 </item>
+        <item>总表户号</item>
+        <item>用户名称</item>
+        <item>表身号</item>
+        <item>阀门编号</item>
+        <item>品牌</item>
+        <item>型号</item>
+        <item>消防栓编号 </item>
+        <item>管长</item>
+        <item>管径</item>
+        <item>管材</item>
+        <item>管线类型</item>
+        <item>横坐标</item>
+        <item>纵坐标</item>
+    </array>
+
+    <array name="query_child_pipe_key">
+        <item>营业片区</item>
+        <item>管线地址</item>
+        <item>所在道路</item>
+        <item>维修日期</item>
+        <item>状态</item>
+        <item>施工单位</item>
+        <item>生产厂家</item>
+        <item>工程名称</item>
+        <item>竣工日期 </item>
+        <item>维修次数</item>
+        <item>埋设方式</item>
+        <item>任务编号</item>
+        <item>编辑用户</item>
+        <item>所在区域</item>
+        <item>工程编号</item>
+        <item>工程负责人</item>
+        <item>工程管理人</item>
+        <item>最近任务编号</item>
+        <item>入库时间</item>
+        <item>使用年限</item>
+        <item>分类码 </item>
+        <item>管点地址</item>
+        <item>备注</item>
+    </array>
+
+    <array name="handle_status">
+        <item>未处理完成</item>
+        <item>处理完成</item>
+    </array>
+
+    <array name="user_test">
+        <item>管理员</item>
+        <item>自己</item>
+    </array>
+
+    <array name="pipeplancontent_key">
+        <item>计划编号</item>
+        <item>计划名称</item>
+        <item>计划类型</item>
+        <item>计划单长</item>
+        <item>计划总长</item>
+        <item>材质</item>
+        <item>口径</item>
+        <item>区域</item>
+        <item>派发人</item>
+        <item>派发时间</item>
+        <item>开始时间</item>
+        <item>完成时间</item>
+        <item>巡查周期</item>
+        <item>巡查次数</item>
+        <item>备注</item>
+
+    </array>
+
+
+
+    <array name="deviceplancontent_key">
+        <item>计划编号</item>
+        <item>计划名称</item>
+        <item>计划类型</item>
+        <item>设备名称</item>
+        <item>设备个数</item>
+        <item>口径</item>
+        <item>区域</item>
+        <item>派发人</item>
+        <item>派发时间</item>
+        <item>开始时间</item>
+        <item>完成时间</item>
+        <item>巡查周期</item>
+        <item>巡查次数</item>
+
+        <item>备注</item>
+
+    </array>
+
+    <array name="eventhandlecontent_key">
+        <item>事件编号</item>
+        <item>事件类型</item>
+        <item>区域</item>
+        <item>材质</item>
+        <item>口径</item>
+        <item>派发时间</item>
+        <item>上报人</item>
+        <item>上报人手机</item>
+        <item>上报时间</item>
+        <item>处理人</item>
+        <item>处理人手机</item>
+        <item>受理时间</item>
+        <item>描述</item>
+        <item>备注</item>
+
+    </array>
+
+    <array name="eventquerycontent_key">
+        <item>事件名称</item>
+        <item>上报人</item>
+        <item>上报时间</item>
+        <item>区域</item>
+        <item>材质</item>
+        <item>口径</item>
+        <item>描述</item>
+        <item>备注</item>
+
+    </array>
+
+    <array name="eventprocess_key">
+        <item>事件编号</item>
+        <item>处理人</item>
+        <item>处理时间</item>
+        <item>描述</item>
+        <item>备注</item>
+
+    </array>
+    
+    <string-array name="gps_period">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+
+
+    </string-array>
+
+    <string-array name="help_question">
+        <item>如何进行属性查询？</item>
+        <item>如何进行地名定位？</item>
+        <item>如何清除地图绘制？</item>
+        <item>如何开始巡查？</item>
+        <item>如何结束巡查？</item>
+        <item>如何上传事件？</item>
+        <item>如何爆管分析（关阀）？</item>
+        <item>如何二次关阀？</item>
+    </string-array>
+    <string-array name="help_result">
+        <item>将地图放大到一定比例后，点击快捷工具栏的查询图标 ， 然后点击待查询的管线或管点，系统会自动弹出管线（点）对象的属性信息框。</item>
+        <item>点击“地图”→“地名定位”，弹出地名定位窗口。在文本框中输入地名（支持模糊查询），点击“确认”，系统自动列出与查找内容相符的地名，点击其中一条</item>
+        <item>点击“地图”→“清除”，可以清除某些功能（如距离量算、面积量算）在地图上留下的痕迹。</item>
+        <item>点击“巡查”→“开始巡查”，在计划列表中选择一项计划开始巡查或选择“无计划巡查”，点击“确认”巡查即可成功开始，此时用户状态变为巡查状态。</item>
+        <item>巡查结束后，点击“巡查”→“结束巡查”可结束巡查，结束巡查后，用户状态从巡查状态变回在线状态。</item>
+        <item>用户开始巡查后，可以点击“巡查”→“事件上报”，将巡查过程中发现的事件上报到系统中。如果巡查人员可以现场对发现的事件进行处理，可选择自己为处理人，然后在“事件处理”模块输入事件处理相关记录；如果事件无法当场处理，可将事件分配给系统管理员，在后台管理端输入事件处理相关记录。</item>
+        <item>点击菜单栏的“抢修”→“爆管分析”，选中爆裂的管线即可，之后会出现一些必须关闭阀门的编号，点击后可以查看阀门的信息和位置</item>
+        <item>爆管分析后查看阀门信息的对话框中有红色“+”号的图标，点击即可</item>
+    </string-array>
+    
+    
+
+</resources>

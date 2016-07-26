@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".MainActivity">
+    <item
+        android:id="@+id/seven_parameter_activity"
+        android:orderInCategory="100"
+        android:title="@string/seven_parameter_activity"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/four_parameter_activity"
+        android:orderInCategory="100"
+        android:title="@string/four_parameter_activity"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/gaosi_activity"
+        android:orderInCategory="100"
+        android:title="@string/gaosi_activity"
+        app:showAsAction="never"/>
+
+</menu>

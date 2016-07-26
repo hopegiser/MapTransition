@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.wang.leadmap.mapdemo"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:name="com.activeandroid.app.Application">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".SetMapSevenParamActivity"/>
+        <activity android:name=".MapSevenParamActivity"/>
+        <activity android:name="com.hope.leadmap.mapdemo.sevenparameter.SevenPatameterActivity">
+        </activity>
+        <activity android:name="com.hope.leadmap.mapdemo.sevenparameter.SetSevenParameterActivity">
+        </activity>
+        <activity android:name="com.hope.leadmap.mapdemo.sevenparameter.ProjectActivity"/>
+        <activity android:name="com.hope.leadmap.mapdemo.fourparameter.FourParameterActivity">
+        </activity>
+        <activity android:name="com.hope.leadmap.mapdemo.fourparameter.SetFourParameterActivity">
+        </activity>
+
+        <activity android:name="com.hope.leadmap.mapdemo.gaosi_BL_XY.GaosiActivity">
+        </activity>
+        <meta-data android:name="AA_DB_NAME" android:value="hope.db"></meta-data>
+        <meta-data android:name="AA_DB_VERSION" android:value="2"></meta-data>
+    </application>
+
+</manifest>
