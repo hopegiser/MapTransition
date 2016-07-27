@@ -8,11 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.activeandroid.ActiveAndroid;
-import com.activeandroid.query.Delete;
-import com.activeandroid.query.Select;
+import com.core.ACache;
+import com.core.ActContent;
 import com.wang.leadmap.mapdemo.R;
-import com.wang.leadmap.mapdemo.db.SevenParams;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,7 +19,8 @@ public class SetSevenParameterActivity extends ActionBarActivity {
 
     private String msg_str;
     private Toast toast;
-    private SevenParams sevenParams;
+//    private SevenParams sevenParams;
+    private com.core.vo.SevenParams sevenParam;
     private double px,py,pz,rx,ry,rz,k;
     @Bind(R.id.pan_x_edit)
     EditText panXEdit;
@@ -46,20 +45,22 @@ public class SetSevenParameterActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_seven_parameter);
         ButterKnife.bind(this);
-        ActiveAndroid.initialize(this);
-        if (select()!=null){
-            sevenParams=select();
-            panXEdit.setText(String.valueOf(sevenParams.Px));
-            panYEdit.setText(String.valueOf(sevenParams.Py));
-            panZEdit.setText(String.valueOf(sevenParams.Pz));
-            roatXEdit.setText(String.valueOf(sevenParams.Rx));
-            roatYEdit.setText(String.valueOf(sevenParams.Ry));
-            roatZEdit.setText(String.valueOf(sevenParams.Rz));
-            kEdit.setText(String.valueOf(sevenParams.K));
+        ACache cache=ACache.get(this);
+        sevenParam= (com.core.vo.SevenParams) cache.getAsObject(ActContent.SEVENPARAMS);
+        if (sevenParam!=null){
+            panXEdit.setText(String.valueOf(sevenParam.Px));
+            panYEdit.setText(String.valueOf(sevenParam.Py));
+            panZEdit.setText(String.valueOf(sevenParam.Pz));
+            roatXEdit.setText(String.valueOf(sevenParam.Rx));
+            roatYEdit.setText(String.valueOf(sevenParam.Ry));
+            roatZEdit.setText(String.valueOf(sevenParam.Rz));
+            kEdit.setText(String.valueOf(sevenParam.K));
         }
+
         okBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ACache cache=ACache.get(SetSevenParameterActivity.this);
                 if (!TextUtils.isEmpty(panXEdit.getText())
                         && !TextUtils.isEmpty(panYEdit.getText())
                         && !TextUtils.isEmpty(panZEdit.getText())
@@ -68,14 +69,20 @@ public class SetSevenParameterActivity extends ActionBarActivity {
                         && !TextUtils.isEmpty(roatZEdit.getText())
                         && !TextUtils.isEmpty(kEdit.getText())) {
                     initSeven();
-                    sevenParams=select();
-                    if (sevenParams==null){
-                        sevenParams=new SevenParams(px,py,pz,rx,ry,rz,k);
-                        sevenParams.save();
+
+                    if (sevenParam==null){
+                        sevenParam=new com.core.vo.SevenParams();
+                        sevenParam.Px=px;
+                        sevenParam.Py=py;
+                        sevenParam.Pz=pz;
+                        sevenParam.Rx=rx;
+                        sevenParam.Ry=ry;
+                        sevenParam.Rz=rz;
+                        sevenParam.K=k;
+
+                        cache.put(ActContent.SEVENPARAMS,sevenParam);
                     }else {
-                        delete();
-                        sevenParams=new SevenParams(px,py,pz,rx,ry,rz,k);
-                        sevenParams.save();
+                        sevenParam= (com.core.vo.SevenParams) cache.getAsObject(ActContent.SEVENPARAMS);
                     }
                     msg_str = "参数设置完成";
                     toast = Toast.makeText(SetSevenParameterActivity.this, msg_str, Toast.LENGTH_SHORT);
@@ -102,12 +109,4 @@ public class SetSevenParameterActivity extends ActionBarActivity {
         this.rz=Double.valueOf(roatZEdit.getText().toString());
         this.k=Double.valueOf(kEdit.getText().toString());
     }
-    private void delete(){
-        new Delete().from(SevenParams.class).execute();
-    }
-
-    private SevenParams select(){
-        return new Select().from(SevenParams.class).executeSingle();
-    }
-
 }
