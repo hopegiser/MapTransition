@@ -12,9 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.activeandroid.query.Select;
+import com.core.ACache;
+import com.core.ActContent;
+import com.core.vo.SevenParams;
 import com.wang.leadmap.mapdemo.R;
-import com.wang.leadmap.mapdemo.db.SevenParams;
 
 public class SevenPatameterActivity extends ActionBarActivity implements View.OnClickListener {
 
@@ -396,6 +397,8 @@ public class SevenPatameterActivity extends ActionBarActivity implements View.On
 
 
     private SevenParams select(){
-        return new Select().from(SevenParams.class).executeSingle();
+        ACache cache=ACache.get(this);
+        SevenParams sevenParams=(SevenParams) cache.getAsObject(ActContent.SEVENPARAMS);
+        return sevenParams;
     }
 }

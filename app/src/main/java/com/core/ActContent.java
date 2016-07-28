@@ -6,4 +6,6 @@ package com.core;
 public class ActContent  {
     public static final String SEVENPARAMS="SevenParams";
 
+    public static final String FOURPARAMS="FourParamas";
+
 }

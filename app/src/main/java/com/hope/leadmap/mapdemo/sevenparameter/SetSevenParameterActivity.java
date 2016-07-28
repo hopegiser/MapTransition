@@ -19,7 +19,6 @@ public class SetSevenParameterActivity extends ActionBarActivity {
 
     private String msg_str;
     private Toast toast;
-//    private SevenParams sevenParams;
     private com.core.vo.SevenParams sevenParam;
     private double px,py,pz,rx,ry,rz,k;
     @Bind(R.id.pan_x_edit)
@@ -79,7 +78,6 @@ public class SetSevenParameterActivity extends ActionBarActivity {
                         sevenParam.Ry=ry;
                         sevenParam.Rz=rz;
                         sevenParam.K=k;
-
                         cache.put(ActContent.SEVENPARAMS,sevenParam);
                     }else {
                         sevenParam= (com.core.vo.SevenParams) cache.getAsObject(ActContent.SEVENPARAMS);

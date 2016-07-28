@@ -8,11 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.activeandroid.ActiveAndroid;
-import com.activeandroid.query.Delete;
-import com.activeandroid.query.Select;
+import com.core.ACache;
+import com.core.ActContent;
 import com.wang.leadmap.mapdemo.R;
-import com.wang.leadmap.mapdemo.db.FourParams;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,7 +18,7 @@ import butterknife.ButterKnife;
 public class SetFourParameterActivity extends ActionBarActivity {
 
     private double dx,dy,red,k;
-    private FourParams fourParams;
+    private com.core.vo.FourParams fourParams;
 
     @Bind(R.id.pan_x_edit)
     EditText panXEdit;
@@ -37,9 +35,9 @@ public class SetFourParameterActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_four_parameter);
         ButterKnife.bind(this);
-        ActiveAndroid.initialize(this);
-        if (select()!=null){
-            fourParams=select();
+        ACache cache=ACache.get(this);
+        fourParams=(com.core.vo.FourParams)cache.getAsObject(ActContent.FOURPARAMS);
+        if (fourParams!=null){
             panXEdit.setText(String.valueOf(fourParams.dx));
             panYEdit.setText(String.valueOf(fourParams.dy));
             roatXEdit.setText(String.valueOf(fourParams.red));
@@ -49,17 +47,20 @@ public class SetFourParameterActivity extends ActionBarActivity {
         okBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ACache cache=ACache.get(SetFourParameterActivity.this);
                 if (!TextUtils.isEmpty(panXEdit.getText()) || !TextUtils.isEmpty(panYEdit.getText()) ||
                         !TextUtils.isEmpty(roatXEdit.getText()) || !TextUtils.isEmpty(kEdit.getText())){
                     initFour();
-                    fourParams=select();
+
                     if (fourParams==null){
-                        fourParams=new FourParams(dx,dy,red,k);
-                        fourParams.save();
+                        fourParams=new com.core.vo.FourParams();
+                        fourParams.dx=dx;
+                        fourParams.dy=dy;
+                        fourParams.red=red;
+                        fourParams.k=k;
+                        cache.put(ActContent.FOURPARAMS,fourParams);
                     }else {
-                        delete();
-                        fourParams=new FourParams(dx,dy,red,k);
-                        fourParams.save();
+                        fourParams=(com.core.vo.FourParams)cache.getAsObject(ActContent.FOURPARAMS);
                     }
                     Toast.makeText(SetFourParameterActivity.this,"参数设置完成",Toast.LENGTH_SHORT).show();
                     finish();
@@ -77,12 +78,4 @@ public class SetFourParameterActivity extends ActionBarActivity {
         this.k=Double.valueOf(kEdit.getText().toString());
     }
 
-
-    private void delete(){
-        new Delete().from(FourParams.class).execute();
-    }
-
-    private FourParams select(){
-        return new Select().from(FourParams.class).executeSingle();
-    }
 }

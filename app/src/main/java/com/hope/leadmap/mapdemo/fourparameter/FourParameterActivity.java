@@ -12,9 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.activeandroid.query.Select;
+import com.core.ACache;
+import com.core.ActContent;
+import com.core.vo.FourParams;
 import com.wang.leadmap.mapdemo.R;
-import com.wang.leadmap.mapdemo.db.FourParams;
 
 public class FourParameterActivity extends ActionBarActivity {
 
@@ -113,7 +114,9 @@ public class FourParameterActivity extends ActionBarActivity {
     }
 
     private FourParams select(){
-        return new Select().from(FourParams.class).executeSingle();
+        ACache cache=ACache.get(this);
+        com.core.vo.FourParams fourParams=(FourParams)cache.getAsObject(ActContent.FOURPARAMS);
+        return fourParams;
     }
 }
 
