@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.core.vo.GpsWgs;
+import com.utils.BdLocChangeCore;
 import com.wang.leadmap.mapdemo.R;
 
 import java.text.DecimalFormat;
@@ -104,6 +106,10 @@ public class GaosiActivity extends ActionBarActivity implements View.OnClickList
                 } else {
                     B_put = Double.valueOf(latToEdit.getText().toString());
                     L_put = Double.valueOf(lonToEdit.getText().toString());
+
+                    GpsWgs gpsWgs= BdLocChangeCore.bd09ToWGSExactly(B_put,L_put);
+
+
                     double latof=0.0;
                     double lonof=0.0;
 
@@ -113,11 +119,11 @@ public class GaosiActivity extends ActionBarActivity implements View.OnClickList
                     double lonto;
 
                     if (islatAdd){
-                        latto = B_put + latof;
+                        latto = gpsWgs.getWgLat() + latof;
                     }
 
                     else{
-                        latto = B_put - latof;
+                        latto = gpsWgs.getWgLon() - latof;
                     }
 
                     if (islonAdd)
@@ -128,7 +134,7 @@ public class GaosiActivity extends ActionBarActivity implements View.OnClickList
                         Toast.makeText(GaosiActivity.this,"中央经线不能为空",Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    GaosiTool.GaussPositive(latto, lonto, middleline_put);
+                    GaosiTool.GaussPositive_Du(latto, lonto, middleline_put);
                     DecimalFormat decimalFormat = new DecimalFormat("#.#########");
                     String lat_str = decimalFormat.format(GaosiTool.xx);
                     String lon_str = decimalFormat.format(GaosiTool.yy);

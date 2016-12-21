@@ -44,8 +44,6 @@
 
         <activity android:name="com.hope.leadmap.mapdemo.gaosi_BL_XY.GaosiActivity">
         </activity>
-        <meta-data android:name="AA_DB_NAME" android:value="hope.db"></meta-data>
-        <meta-data android:name="AA_DB_VERSION" android:value="2"></meta-data>
     </application>
 
 </manifest>
