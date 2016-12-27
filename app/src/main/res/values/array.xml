@@ -8,6 +8,12 @@
         <item>其他</item>
     </array>
 
+    <string-array name="sources_types">
+        <item>WGS-84</item>
+        <item>bd09</item>
+        <item>gcj02</item>
+    </string-array>
+
     <string-array name="types">
         <item>北京54</item>
         <item>西安80</item>

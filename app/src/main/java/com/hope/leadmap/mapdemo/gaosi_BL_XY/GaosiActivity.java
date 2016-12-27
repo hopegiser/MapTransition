@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +16,7 @@ import com.utils.BdLocChangeCore;
 import com.wang.leadmap.mapdemo.R;
 
 import java.text.DecimalFormat;
+import java.util.Arrays;
 
 public class GaosiActivity extends ActionBarActivity implements View.OnClickListener {
 
@@ -30,6 +33,8 @@ public class GaosiActivity extends ActionBarActivity implements View.OnClickList
     private double B_put;
     private double L_put;
     private double middleline_put;
+
+    private Spinner sourceSpinner;
 
 
     @Override
@@ -67,6 +72,10 @@ public class GaosiActivity extends ActionBarActivity implements View.OnClickList
         xian_80_but=(Button)findViewById(R.id.but_xian_80);
         cgcs_200=(Button)findViewById(R.id.but_cgcs_2000);
 
+        sourceSpinner=(Spinner)findViewById(R.id.select_source);
+        ArrayAdapter<String> adapter_sources = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,  Arrays.asList(getResources().getStringArray(R.array.sources_types)));
+        adapter_sources.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sourceSpinner.setAdapter(adapter_sources);
 
         setBut.setOnClickListener(this);
         changeBut.setOnClickListener(this);
@@ -106,9 +115,15 @@ public class GaosiActivity extends ActionBarActivity implements View.OnClickList
                 } else {
                     B_put = Double.valueOf(latToEdit.getText().toString());
                     L_put = Double.valueOf(lonToEdit.getText().toString());
-
-                    GpsWgs gpsWgs= BdLocChangeCore.bd09ToWGSExactly(B_put,L_put);
-
+                    GpsWgs gpsWgs = new GpsWgs(0,0);
+                    if (sourceSpinner.getSelectedItem().toString().equals("WGS-84")){
+                        gpsWgs.setWgLat(B_put);
+                        gpsWgs.setWgLon(L_put);
+                    }else if (sourceSpinner.getSelectedItem().toString().equals("bd09")){
+                        gpsWgs= BdLocChangeCore.bd09ToWGSExactly(B_put,L_put);
+                    }else if (sourceSpinner.getSelectedItem().toString().equals("gcj02")){
+                        gpsWgs= BdLocChangeCore.gcj2ToWGSExactly(B_put,L_put);
+                    }
 
                     double latof=0.0;
                     double lonof=0.0;

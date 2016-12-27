@@ -56,7 +56,7 @@
 
         <EditText
             android:id="@+id/edit_middleline"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="中央经线"
@@ -64,12 +64,17 @@
 
         <Button
             android:id="@+id/but_set_middle_line"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="设 置"
             />
 
+        <Spinner
+            android:id="@+id/select_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Spinner>
 
 
     </LinearLayout>
