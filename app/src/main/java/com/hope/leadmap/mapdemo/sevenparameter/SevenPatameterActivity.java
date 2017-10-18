@@ -94,7 +94,7 @@ public class SevenPatameterActivity extends ActionBarActivity implements View.On
     private double Rz = 0;
     private double K = 0;
 
-    private int middleline = 0;
+    private double middleline = 0;
     private int zonewide = 0;
 
 

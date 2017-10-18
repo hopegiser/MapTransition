@@ -28,7 +28,7 @@ public class ProjectActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project);
         ButterKnife.bind(this);
-        if (Integer.valueOf(ProjectInfo.getMiddleline())!=0 || Integer.valueOf(ProjectInfo.getZonewide())!=0){
+        if (Double.valueOf(ProjectInfo.getMiddleline())!=0 || Integer.valueOf(ProjectInfo.getZonewide())!=0){
             middlelineEdit.setText(String.valueOf(ProjectInfo.getMiddleline()));
             zonewideEdit.setText(String.valueOf(ProjectInfo.getZonewide()));
         }
@@ -37,7 +37,7 @@ public class ProjectActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 if (!TextUtils.isEmpty(middlelineEdit.getText()) && !TextUtils.isEmpty(zonewideEdit.getText())){
-                        ProjectInfo.setMiddleline(Integer.valueOf(middlelineEdit.getText().toString()));
+                        ProjectInfo.setMiddleline(Double.valueOf(middlelineEdit.getText().toString()));
                         ProjectInfo.setZonewide(Integer.valueOf(zonewideEdit.getText().toString()));
                     Toast.makeText(ProjectActivity.this,"参数设置完成",Toast.LENGTH_SHORT).show();
                     finish();

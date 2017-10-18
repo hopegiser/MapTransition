@@ -21,20 +21,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="设置目标坐标系："/>
+            android:text="目标坐标系："/>
+
+        <Button
+            android:id="@+id/guojia_2000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2000"/>
+
         <Button
             android:id="@+id/xian_80"
             android:layout_marginLeft="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="西安80"/>
+            android:text="80"/>
 
         <Button
             android:id="@+id/beijing_54"
             android:layout_marginLeft="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="北京54"/>
+            android:text="54"/>
 
     </LinearLayout>
 
