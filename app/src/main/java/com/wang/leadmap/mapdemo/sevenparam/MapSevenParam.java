@@ -1,9 +1,11 @@
 package com.wang.leadmap.mapdemo.sevenparam;
 
+import java.io.Serializable;
+
 /**
  * Created by wang on 15/10/16.
  */
-public class MapSevenParam {
+public class MapSevenParam implements Serializable {
 
     public String PanX;
 

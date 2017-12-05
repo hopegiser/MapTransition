@@ -5,17 +5,14 @@ package com.wang.leadmap.mapdemo.sevenparam;
  */
 public class SevenParamHandle {
 
-    private static SevenParamHandle self;
+    private  static final SevenParamHandle self = new SevenParamHandle();
     private MapSevenParam mapSevenParam;
     private double meridan;
     private int d;
     private BeijingParam param;
     private SevenParamHandle(){}
 
-    public static SevenParamHandle initHandle()
-    {
-        if (self == null)
-            self = new SevenParamHandle();
+    public static SevenParamHandle initHandle() {
         return self;
     }
 

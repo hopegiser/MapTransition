@@ -81,6 +81,14 @@ public class SetSevenParameterActivity extends ActionBarActivity {
                         cache.put(ActContent.SEVENPARAMS,sevenParam);
                     }else {
                         sevenParam= (com.core.vo.SevenParams) cache.getAsObject(ActContent.SEVENPARAMS);
+                        sevenParam.Px=px;
+                        sevenParam.Py=py;
+                        sevenParam.Pz=pz;
+                        sevenParam.Rx=rx;
+                        sevenParam.Ry=ry;
+                        sevenParam.Rz=rz;
+                        sevenParam.K=k;
+                        cache.put(ActContent.SEVENPARAMS,sevenParam);
                     }
                     msg_str = "参数设置完成";
                     toast = Toast.makeText(SetSevenParameterActivity.this, msg_str, Toast.LENGTH_SHORT);

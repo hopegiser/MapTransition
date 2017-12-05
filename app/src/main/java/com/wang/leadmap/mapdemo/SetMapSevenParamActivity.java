@@ -22,14 +22,14 @@ public class SetMapSevenParamActivity extends ActionBarActivity implements View.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_set_seven_param);
 
+        initUI();
+
         initEdit();
         setBtn = (Button)findViewById(R.id.set_but);
         setBtn.setOnClickListener(this);
     }
 
-
-    private void initEdit()
-    {
+    private void initUI() {
         dxEdit = (EditText)findViewById(R.id.dx_edit);
         dyEdit = (EditText)findViewById(R.id.dy_edit);
         dzEdit = (EditText)findViewById(R.id.dz_edit);
@@ -37,8 +37,12 @@ public class SetMapSevenParamActivity extends ActionBarActivity implements View.
         wyEdit = (EditText)findViewById(R.id.wy_edit);
         wzEdit = (EditText)findViewById(R.id.wz_edit);
         kEdit = (EditText)findViewById(R.id.k_edit);
-        if (SevenParamHandle.initHandle().getMapSevenParam() != null)
-        {
+    }
+
+
+    private void initEdit() {
+
+        if (SevenParamHandle.initHandle().getMapSevenParam() != null) {
             dxEdit.setText(SevenParamHandle.initHandle().getMapSevenParam().PanX);
             dyEdit.setText(SevenParamHandle.initHandle().getMapSevenParam().PanY);
             dzEdit.setText(SevenParamHandle.initHandle().getMapSevenParam().PanZ);
@@ -46,16 +50,7 @@ public class SetMapSevenParamActivity extends ActionBarActivity implements View.
             wyEdit.setText(SevenParamHandle.initHandle().getMapSevenParam().RotationY);
             wzEdit.setText(SevenParamHandle.initHandle().getMapSevenParam().RotationZ);
             kEdit.setText(SevenParamHandle.initHandle().getMapSevenParam().K);
-        }else
-        {
-//            dxEdit.setText(199.752086+"");
-//            dyEdit.setText(127.567109+"");
-//            dzEdit.setText(-0.82967+"");
-//            wxEdit.setText(-1.5501418983888+"");
-//            wyEdit.setText(2.00974113966859+"");
-//            wzEdit.setText(-2.9319923413606+"");
-//            kEdit.setText(-1.205544e-006+"");
-
+        }else {
             dxEdit.setText(-46.907088+"");
             dyEdit.setText(77.10001+"");
             dzEdit.setText(55.436015+"");
@@ -63,11 +58,13 @@ public class SetMapSevenParamActivity extends ActionBarActivity implements View.
             wyEdit.setText(-0.302528591322617+"");
             wzEdit.setText(2.10080705162668+"");
             kEdit.setText(4.48064e-007+"");
-
-
-
-
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initEdit();
     }
 
     @Override
