@@ -12,19 +12,19 @@ public class GaosiTool {
     static double _e,f;
 
 
-    static void beijing_54(){
+    public static void beijing_54(){
         //北京54椭球
         a = 6378245;                 //北京54椭球 IGA75
         e2 = 0.006693421622965949;   //第一偏心率平方
     }
 
-    static void xian_80(){
+    public static void xian_80(){
         //西安80椭球
         a = 6378140;  //西安80椭球 IGA75
         e2 = 0.006694384999588;
     }
 
-    static void cgcs_2000(){
+    public  static void cgcs_2000(){
         //cgcs2000
         a=6378137;
         f=1/298.257222101;
@@ -105,5 +105,14 @@ public class GaosiTool {
         xx = X + N * t * ((0.5 + (1.0 / 24.0 * (5 - t * t + 9 * h2 + 4 * h2 * h2) + 1.0 / 720.0 * (61 - 58 * t * t + Math.pow(t, 4)) * m * m) * m * m) * m * m);
         yy = N * ((1 + (1.0 / 6.0 * (1 - t * t + h2) + 1.0 / 120.0 * (5 - 18 * t * t + Math.pow(t, 4) + 14 * h2 - 58 * h2 * t * t) * m * m) * m * m) * m);
         yy = yy + 500000;
+    }
+
+
+    public static double getXx() {
+        return xx;
+    }
+
+    public static double getYy() {
+        return yy;
     }
 }

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.core.ACache;
 import com.core.ActContent;
 import com.core.vo.SevenParams;
+import com.hope.leadmap.mapdemo.gaosi_BL_XY.GaosiTool;
 import com.wang.leadmap.mapdemo.R;
 
 public class SevenPatameterActivity extends ActionBarActivity implements View.OnClickListener {
@@ -308,6 +309,17 @@ public class SevenPatameterActivity extends ActionBarActivity implements View.On
 
                     initpara();
 
+//                    Px = -0.114188;
+//                    Py = 0.530412;
+//                    Pz = 0.23321;
+//                    Rx = 0.766727537781707;
+//                    Ry = -1.65067536495364;
+//                    Rz = 3.35724849240024;
+//                    K = 3.7872e-007;
+//
+//                    zonewide = 3;
+//                    middleline = 121.25;
+
                     if (select()!=null){
                         SevenParams params=select();
                         Px = params.Px;
@@ -333,8 +345,12 @@ public class SevenPatameterActivity extends ActionBarActivity implements View.On
 
                     XYZ_54_BLH_54(X_54, Y_54, Z_54);
 
-                    BLH_54_xy_54(B_54, L_54);
+//                    BLH_54_xy_54(B_54, L_54);
+                    GaosiTool.xian_80();
+                    GaosiTool.GaussPositive_Du(B_54,L_54,middleline);
 
+                    x_54 = GaosiTool.getXx();
+                    y_54 = GaosiTool.getYy();
                     latText.setText(String.valueOf(x_54));
                     lonText.setText(String.valueOf(y_54));
                 }
